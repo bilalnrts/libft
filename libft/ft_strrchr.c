@@ -15,24 +15,13 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
-	int	last;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
+	i = ft_strlen(s) - 1;
+	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			last = i;
-		i++;
+			return ((char *)(s + i));
+		i--;
 	}
-	return (s + last);
-}
-
-
-int main()
-{
-	char a[20] = "bilaln";
-	printf("%s", ft_strrchr(a,'l'));
-	return 0;
+	return (NULL);
 }
