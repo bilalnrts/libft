@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: binurtas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 19:50:57 by binurtas          #+#    #+#             */
-/*   Updated: 2022/10/03 19:52:35 by binurtas         ###   ########.fr       */
+/*   Created: 2022/10/03 12:25:13 by binurtas          #+#    #+#             */
+/*   Updated: 2022/10/03 12:30:29 by binurtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
+	while((i < n) && s[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)(s + i));
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
+			return ((void *)(s + i));
 		i++;
 	}
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
 	return (NULL);
 }
