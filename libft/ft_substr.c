@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: binurtas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 19:35:12 by binurtas          #+#    #+#             */
-/*   Updated: 2022/10/04 16:22:19 by binurtas         ###   ########.fr       */
+/*   Created: 2022/10/04 19:58:22 by binurtas          #+#    #+#             */
+/*   Updated: 2022/10/04 19:59:42 by binurtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if (c <= 'z' && c >= 'a')
-		return (c - 32);
-	return (c);
-}
+	char	*str;
+
+	

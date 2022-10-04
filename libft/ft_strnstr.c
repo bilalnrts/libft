@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: binurtas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 19:35:12 by binurtas          #+#    #+#             */
-/*   Updated: 2022/10/04 16:22:19 by binurtas         ###   ########.fr       */
+/*   Created: 2022/10/04 12:58:28 by binurtas          #+#    #+#             */
+/*   Updated: 2022/10/04 18:30:45 by binurtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (c <= 'z' && c >= 'a')
-		return (c - 32);
-	return (c);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (!big || !little)
+		return (0);
+	if (!little[0])
+		return ((char *)(big));
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (big[i + j] && little[j]
+			&& i + j < len && big[i + j] == little[j])
+			j++;
+		if (!little[j])
+			return ((char *)(big + i));
+		i++;
+	}
+	return (0);
 }

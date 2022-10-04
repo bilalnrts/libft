@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: binurtas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 19:35:12 by binurtas          #+#    #+#             */
-/*   Updated: 2022/10/04 16:22:19 by binurtas         ###   ########.fr       */
+/*   Created: 2022/10/04 13:24:23 by binurtas          #+#    #+#             */
+/*   Updated: 2022/10/04 18:28:46 by binurtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (c <= 'z' && c >= 'a')
-		return (c - 32);
-	return (c);
+	int	i;
+	int	result;
+	int	pn;
+
+	i = 0;
+	result = 0;
+	pn = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || (nptr[i] == 32))
+		i++;
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+			pn *= -1;
+		i++;
+	}
+	while (nptr[i] <= '9' && nptr[i] >= '0')
+	{
+		result = (result * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (result * pn);
 }
