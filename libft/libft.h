@@ -17,6 +17,13 @@
 # include <unistd.h>
 # include <stdio.h>
 
+typedef struct s_list
+{
+	void	*content;
+	struct s_list	*next;
+}	t_list;
+
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -49,4 +56,11 @@ char	*ft_strjoin(char const *s1, char const *s2); //Add header
 char	*ft_strtrim(char const *s1, char const *s2); //Add header 2-4-6MKO
 char	**ft_split(char const *s, char c); //Add header
 char	*ft_itoa(int n); //Add header
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char)); //Add header
+void	ft_striteri(char *s, void (*f)(unsigned int, char*)); //Add header
+void	ft_putchar_fd(char c, int fd); //Add header
+void	ft_putstr_fd(char *s, int fd); //Add header
+void	ft_putendl_fd(char *s, int fd); //Add header
+void	ft_putnbr_fd(int n, int fd); //Add header
+t_list	*ft_lstnew(void *content); //Add header
 #endif
