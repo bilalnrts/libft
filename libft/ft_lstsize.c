@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: binurtas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 13:25:01 by binurtas          #+#    #+#             */
-/*   Updated: 2022/10/07 17:13:10 by binurtas         ###   ########.fr       */
+/*   Created: 2022/10/07 15:27:11 by binurtas          #+#    #+#             */
+/*   Updated: 2022/10/07 17:15:15 by binurtas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*_join(char *s1, char *s2)
+int	ft_lstsize(t_list *lst)
 {
-	int	len_s1;
-	int	len_s2;
 	int	i;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
 	i = 0;
-	while (i < len_s2)
+	while (lst)
 	{
-		s1[len_s1] = s2[i];
+		lst = lst -> next;
 		i++;
-		len_s1++;
 	}
-	return (s1);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*str;
-
-	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!str)
-		return (0);
-	_join(str, (char *)s1);
-	_join(str, (char *)s2);
-	str[ft_strlen(str) + 1] = '\0';
-	return (str);
+	return (i);
 }
