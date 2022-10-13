@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+         #
+#    By: binurtas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/10/11 21:19:28 by ncolomer          #+#    #+#              #
-#    Updated: 2019/10/18 23:01:39 by ncolomer         ###   ########.fr        #
+#    Created: 2022/10/13 15:30:50 by binurtas          #+#    #+#              #
+#    Updated: 2022/10/13 15:30:54 by binurtas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRCS			= ft_atoi.c ft_bzero.c ft_isdigit.c ft_isalpha.c ft_isascii.c \
 			ft_isalnum.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
@@ -19,6 +20,7 @@ SRCS			= ft_atoi.c ft_bzero.c ft_isdigit.c ft_isalpha.c ft_isascii.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstmap.c
+
 OBJS			= $(SRCS:.c=.o)
 
 BONUS			=
