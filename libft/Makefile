@@ -3,12 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: okeles <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: binurtas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/05 16:16:42 by okeles            #+#    #+#              #
-#    Updated: 2022/10/07 12:18:36 by okeles           ###   ########.fr        #
+#    Created: 2022/10/13 15:30:50 by binurtas          #+#    #+#              #
+#    Updated: 2022/10/13 15:30:54 by binurtas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 SRCS		= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
@@ -35,7 +36,7 @@ all:		$(NAME)
 $(NAME):	$(OBJS)
 			ar rcs $(NAME) $(OBJS)
 
-clean:		
+clean:
 			rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean:		clean
