@@ -17,6 +17,9 @@ FTLST_FILES		=	ft_lstadd_back ft_lstadd_front ft_lstclear ft_lstdelone \
 FTMEM_DIR		=	ft_mem/
 FTMEM_FILES		=	ft_bzero ft_calloc ft_memchr ft_memcmp ft_memcpy ft_memmove ft_memset
 
+PRINTF_DIR		=	ft_printf/
+PRINTF_FILES	=	ft_printf ft_printf_utils
+
 FTPUT_DIR		=	ft_put/
 FTPUT_FILES		=	ft_putchar_fd ft_putendl_fd ft_putnbr_fd ft_putstr_fd
 
@@ -28,12 +31,17 @@ FTSTR_FILES		=	ft_split ft_strchr ft_strcmp ft_strdup ft_striteri ft_strjoin \
 FTTO_DIR		=	ft_to/
 FTTO_FILES		=	ft_atoi ft_itoa ft_tolower ft_toupper
 
+GNL_DIR			=	gnl/
+GNL_FILES		=	get_next_line get_next_line_utils
+
 SRC_FILES		+=	$(addprefix $(FTIS_DIR), $(FTIS_FILES))
 SRC_FILES		+=	$(addprefix $(FTLST_DIR), $(FTLST_FILES))
 SRC_FILES		+=	$(addprefix $(FTMEM_DIR), $(FTMEM_FILES))
+SRC_FILES		+=	$(addprefix $(PRINTF_DIR), $(PRINTF_FILES))
 SRC_FILES		+=	$(addprefix $(FTPUT_DIR), $(FTPUT_FILES))
 SRC_FILES		+=	$(addprefix $(FTSTR_DIR), $(FTSTR_FILES))
 SRC_FILES		+=	$(addprefix $(FTTO_DIR), $(FTTO_FILES))
+SRC_FILES		+=	$(addprefix $(GNL_DIR), $(GNL_FILES))
 
 SRC				=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJ				=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -52,10 +60,12 @@ $(OBJF)			:
 					@mkdir -p $(OBJ_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTIS_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTMEM_DIR)
+					@mkdir -p $(OBJ_DIR)$(FTLST_DIR)
+					@mkdir -p $(OBJ_DIR)$(PRINTF_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTPUT_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTTO_DIR)
 					@mkdir -p $(OBJ_DIR)$(FTSTR_DIR)
-					@mkdir -p $(OBJ_DIR)$(FTLST_DIR)
+					@mkdir -p $(OBJ_DIR)$(GNL_DIR)
 					@touch $(OBJF)
 
 clean			:
@@ -68,3 +78,4 @@ fclean			:	clean
 re				:	fclean all
 
 .PHONY			:	all clean fclean re
+
